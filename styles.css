@@ -1,0 +1,5 @@
+.gradient-legend {
+    height: 20px;
+    background: linear-gradient(to right, blue, red); 
+    border-radius: 5px;
+}

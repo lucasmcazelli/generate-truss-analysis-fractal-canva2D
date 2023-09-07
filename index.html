@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fractal Truss Analysis</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-4">
+        <h1 class="text-center">Fractal Truss Analysis Using the Joint Method</h1>
+        <p class="lead text-center mb-4">
+            This interactive tool demonstrates the concept of analyzing forces in a truss structure using fractals and the joint method.
+        </p>
+        
+        <!-- Theory Behind the Joint Method -->
+        <div class="card mb-3">
+            <div class="card-header" id="headingOne">
+                <h5 class="mb-0">
+                    <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Theory Behind the Joint Method
+                    </button>
+                </h5>
+            </div>
+            <div id="collapseOne" class="collapse" aria-labelledby="headingOne">
+                <div class="card-body">
+                    The joint method, also known as the method of joints, is a process used to determine the forces in individual members of a truss structure. The primary principle behind the joint method is that the sum of forces in any direction for a joint in equilibrium is zero. This means the algebraic sum of all horizontal forces and all vertical forces acting on the joint is zero. By applying this method systematically to all joints, we can determine the forces acting on each member of the truss.
+                </div>
+            </div>
+        </div>
+
+        <!-- About Fractals -->
+        <div class="card mb-3">
+            <div class="card-header" id="headingTwo">
+                <h5 class="mb-0">
+                    <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        About Fractals Used in this Code
+                    </button>
+                </h5>
+            </div>
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo">
+                <div class="card-body">
+                    Fractals are complex structures that look similar at any level of magnification. They are formed by repeating a simple process in an ongoing feedback loop. In this code, we use fractals to generate complex truss structures by recursively dividing triangles into smaller triangles. This allows for the creation of intricate and varied truss designs using a simple algorithmic approach.
+                </div>
+            </div>
+        </div>
+
+        <section class="input-section">
+            <div class="instruction-section mb-4">
+                <h3>Instructions:</h3>
+                <p>
+                    Click anywhere on the canvas below to place the point of force application. The truss will generate with the top vertices at the point of click, and the stress distribution will be visualized using color gradients. Use the force input and refinement options to adjust the simulation.
+                </p>
+            </div>
+            <label for="forceInput">Enter Force (N): </label>
+            <input type="number" id="forceInput" value="10" placeholder="Enter force in Newtons">
+            <label for="refinementInput">Refinement: </label>
+            <input type="number" id="refinementInput" min="1" max="10" value="5">
+        </section>
+
+        <section class="canvas-section mb-3">
+            <canvas id="canvas" width="800" height="600" class="d-block mx-auto"></canvas>
+        </section>
+        
+        <section class="legend-section">
+            <h2 class="text-center mb-3">Stress Legend</h2>
+            <div class="gradient-legend mx-auto mb-3" style="width: 200px; height: 20px; background: linear-gradient(to right, blue, red);"></div>
+            <div class="legend-values d-flex justify-content-between" style="width: 200px; margin: 0 auto;">
+                <span id="minValue">Min</span>
+                <span id="maxValue">Max</span>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
